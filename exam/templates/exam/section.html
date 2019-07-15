@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher</title>
+</head>
+<body>
+<h1>Hello admin</h1>
+
+<br>
+<br>
+<br>
+
+	<form method="POST">{% csrf_token %}
+        {{ sec_form.as_p }}
+        <input type="submit">
+</form>
+
+</body>
+</html>

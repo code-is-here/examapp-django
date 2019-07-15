@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student</title>
+</head>
+<body>
+<h1>Upcoming exams</h1>
+<br>
+<br>
+{% for i in exam %}
+	<a href="{% url 'student_exam' i.pk %}">{{i}}</a>
+{% endfor %}
+</body>
+</html>

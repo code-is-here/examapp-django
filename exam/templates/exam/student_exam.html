@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student</title>
+</head>
+<body>
+<h1>
+	Give your exam
+</h1>
+	<br>
+	Name:    {{exam.name}}
+	<br>
+	Duration: {{exam.duration}}
+	<br>
+	Section: {% for section in exam.section.all %}{{ section }}  {% endfor %}
+	<input type="submit" name="" value="Start Exam">
+
+</body>
+</html>
