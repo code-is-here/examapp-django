@@ -10,11 +10,14 @@
 <br>
 
 	<form method="POST">{% csrf_token %}
-        {{ ques_form.as_p }}
-        <input type="submit">  
+        {{ choice_form.as_p }}
+        <input type="submit">
 </form>
 
-
+<br>
+<br>
+<br>
+<button><a href="/question">Add another Question</a></button>
 
 </body>
 </html>

@@ -27,7 +27,6 @@ class UserManager(BaseUserManager):
 		user.is_staff = True
 		user.role = 1
 		user.save()
-
 		return user
 
 

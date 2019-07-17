@@ -1,0 +1,15 @@
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign-Up choice{% endblock %}
+
+{% block content %}
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Select</h4>
+<form method="post">
+  {% csrf_token %}
+  <button  type="submit" name="teacher"> Sign-up as a teacher</button><br/><br/>
+  <button type="submit" name="student"> Sign-up as a student</button>
+</form>
+{% endblock %}
