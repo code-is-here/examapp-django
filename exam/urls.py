@@ -13,6 +13,7 @@ urlpatterns = [
     path('index', views.index, name = "index"),
     path('', views.signupchoice, name = "signupchoice"),
     path('signup/', views.signup, name='signup'),
+    
 
 
 

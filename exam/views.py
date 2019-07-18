@@ -1,11 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SectionForm, QuestionForm, ScheduleExamForm, SignUpForm, ChoiceForm
-
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
-
 from django.http import HttpResponseRedirect
 from django.views.generic import FormView
 from .models import Question, Section, Exam, User, Choice
@@ -57,8 +54,6 @@ class LoginView(FormView):
 
 def index(request):
 	return render(request, "exam/index.html")
-
-
 
 def choice(request):
 	if request.method == "POST":
@@ -132,5 +127,7 @@ def student(request):
 
 def student_exam(request, pk):
 	exam = get_object_or_404(Exam, pk = pk)
-	return render(request, "exam/student_exam.html", {"exam" : exam})
+	question = Question.objects.all()
+	choice = Choice.objects.all()
+	return render(request, "exam/student_exam.html", {"question" : question, "exam":exam, "choice":choice})
 

@@ -10,10 +10,38 @@
 	<br>
 	Name:    {{exam.name}}
 	<br>
+	<br>
 	Duration: {{exam.duration}}
 	<br>
-	Section: {% for section in exam.section.all %}{{ section_question }}  {% endfor %}
-	<input type="submit" name="" value="Start Exam">
+	<br>
+	 {% for section in exam.section.all %}<b>Section:  {{ section }} </b>
+	<br>
+	<br>
+
+	{% for i in question %}
+
+	{% if i.section.id == section.id %}
+	{{i.question}}
+
+	{% for j in choice %}
+
+	{% if i.id == j.question.id %}
+	
+	<form>
+
+  <input type="checkbox" name="gender">{{j.choice}}<br>
+ 
+</form>
+
+	{% endif %}
+
+	{% endfor %}
+
+	{% endif %}
+
+	{% endfor %}
+	{% endfor %}
+	
 
 </body>
 </html>
