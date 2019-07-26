@@ -1,9 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Exam app
+	</title>
+</head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  	body{
+  		background-color: #76A765;
+  	}
+  </style>
+<body>
+<div class="container">
+	
+		<div class="col-xs-12">
+			<center>
+				<p style="font-family: monospace; margin-top: 60px; font-size: 70px;">
+					{{exam.name}}
+				</p>
+
+			</center>
+		</div>
+	
+</div>
+
+<br>
+
+<div class="container">
+	<div style="font-family: monospace;" class="col-xs-12">
+		<b>Duration: {{exam.duration}} Minutes</b>
+	</div>
+	<div>
+		<span id="count" style="font-family: monospace;"><b>1800</b></span> : 
+
+<a href="#" id="startClock" style="color: black; font-family: monospace;">Start Exam</a>
+	</div>
+	<br>
+	<div>
+			 {% for section in exam.section.all %}<b>Section:  {{ section }} </b>
+	<br>
+	<hr>
+	
+
+	{% for i in question %}
+
+	{% if i.section.id == section.id %}
+	<div>
+		<b style="font-family: monospace;">{{i.question}}</b><br>
+		
+	</div>
+
+	{% for j in choice %}
+
+	{% if i.id == j.question.id %}
+	
+	<form>
+
+  <input type="checkbox" name="gender">{{j.choice}}<br>
+ 
+</form>
+
+	{% endif %}
+
+	{% endfor %}
+
+	{% endif %}
+
+	{% endfor %}
+	{% endfor %}
+	</div>
+</div>
+<script>
+	function startTimer(){
+  var counter = 1800;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+        alert('sorry, out of time');
+        clearInterval(counter);
+    }
+  }, 1000);
+}
+$("#startClock").click(function(){
+    startTimer();
+ });
+
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Student</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <body>
+
+<span id="count">5</span> seconds
+
+<a href="#" id="startClock">Start Exam</a>
+
+
+<br>
+<br>
+
 <h1>
 	Give your exam
 </h1>
@@ -44,4 +162,24 @@
 	
 
 </body>
-</html>
+<script>
+	function startTimer(){
+  var counter = 1800;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+        alert('sorry, out of time');
+        clearInterval(counter);
+    }
+  }, 1000);
+}
+$("#startClock").click(function(){
+    startTimer();
+ });
+
+</script>
+</html> -->

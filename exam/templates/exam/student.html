@@ -1,20 +1,48 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Student</title>
+	<title>
+		Exam app
+	</title>
 </head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  	body{
+  		background-color: #76A765;
+  	}
+  </style>
 <body>
-<h1>Upcoming exams</h1>
+<div class="container">
+	
+		<div class="col-xs-12">
+			<center>
+				<p style="font-family: monospace; margin-top: 60px; font-size: 70px;">
+					Upcoming Exams
+				</p>
+			</center>
+		</div>
+	
+</div>
+
 <br>
-<br>
-{% for i in exam %}
-	{{i}}
+
+<div class="container">
+	<div class="col-xs-12">
+		{% for i in exam %}
+	
 	<br>
 	<br>
-	<button><a href="{% url 'student_exam' i.pk %}">Start Exam</a></button>
+	<p style="font-family: monospace; font-size: 30px;">
+		<a style="color: black;" href="{% url 'student_exam' i.pk %}">{{i}}</a>
+	</p>
 	<br>
 	<br>
-	===================================================
 {% endfor %}
+	</div>
+</div>
 </body>
 </html>

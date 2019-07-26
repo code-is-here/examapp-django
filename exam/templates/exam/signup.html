@@ -1,11 +1,64 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam app</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+  .singup{
+    font-size: 80px;
+    color: #0054FF;
+  }
+  .jumbo{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+ input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+ input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+</style>
+<body>
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="card">
-<div class="card-body">
-<h4 class="card-title">Sign-Up</h4>
-  <form method="post">
+  
+<div class="container">
+    <div class="jumbotron jumbo">
+      <center>
+        <b>
+          <p class="singup">
+            Sign up
+          </p>
+        </b>
+      </center>
+    </div>
+
+</div>
+
+
+  <div class="container jumbo">
+    <div class = "col-xs-12">
+      <form method="post">
     {% csrf_token %}
     {% for field in form %}
       <p>
@@ -19,6 +72,10 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit">Sign up</button>
+    <button class="btn btn-success" type="submit">Sign up</button>
   </form>
 {% endblock %}
+    </div>
+  </div>
+</body>
+</html>

@@ -1,15 +1,60 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam app</title>
+</head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  	  .singup{
+    font-size: 80px;
+    color: #0054FF;
+  }
+  .jumbo{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  </style>
+<body>
+  
+<div class="container">
+    <div class="jumbotron jumbo">
+      <center>
+        <b>
+          <p class="singup">
+            Exam app
+          </p>
+        </b>
+      </center>
+    </div>
+
+</div>
+</body>
+</html>
+
+
 {% load crispy_forms_tags %}
 
-{% block title %}Sign-Up choice{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
-<div class="card">
-<div class="card-body">
-<h4 class="card-title">Select</h4>
-<form method="post">
+
+<br>
+<br>
+<br>
+
+<div class="container">
+	<div class="col-xs-12">
+		<form method="post">
   {% csrf_token %}
-  <button  type="submit" name="teacher"> Sign-up as a teacher</button><br/><br/>
-  <button type="submit" name="student"> Sign-up as a student</button>
+ <center>
+ 	<span> <button  type="submit" class="btn btn-primary" name="teacher"> Sign-up as a teacher</button>
+ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span> <button type="submit" class="btn btn-primary" name="student"> Sign-up as a student</button></span>
+ </center>
 </form>
 {% endblock %}
+	</div>
+</div>
